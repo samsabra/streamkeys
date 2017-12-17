@@ -92,6 +92,27 @@
     this.updatePlayerState();
   };
 
+  BaseController.prototype.forward = function() {
+    this.doc().querySelector("video").currentTime += 5; 
+  };
+
+  BaseController.prototype.rewind = function() {
+    this.doc().querySelector("video").currentTime -= 5;
+  };
+  
+  BaseController.prototype.speedUp = function() {
+    this.doc().querySelector("video").playbackRate += 0.1;
+  };
+  
+  BaseController.prototype.slowDown = function() {
+    this.doc().querySelector("video").playbackRate -= 0.1;
+  };
+  
+  BaseController.prototype.resetPlaybackSpeed = function() {
+    this.doc().querySelector("video").playbackRate = 1.0;
+  };
+  
+
   BaseController.prototype.playPause = function() {
     if(this.selectors.play !== null && this.selectors.pause !== null) {
       if(this.isPlaying()) {
@@ -261,6 +282,12 @@
         this.oldState = newState;
         response(newState);
       }
+      if(request.action === "speedUp") this.speedUp();
+      if(request.action === "slowDown") this.slowDown();
+      if(request.action === "resetPlaybackSpeed") this.resetPlaybackSpeed();
+      if(request.action === "rewind") this.rewind();
+      if(request.action === "forward") this.forward();
+  
     }
   };
 

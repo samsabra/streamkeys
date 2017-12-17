@@ -40,16 +40,10 @@
       "description": "Toggle play/pause"
     },
     "playNext": {
-      "suggested_key": {
-        "default": "MediaNextTrack"
-      },
       "global": true,
       "description": "Play next track"
     },
     "playPrev": {
-      "suggested_key": {
-        "default": "MediaPrevTrack"
-      },
       "global": true,
       "description": "Play previous track"
     },
@@ -79,6 +73,32 @@
     "playerStateNotify": {
       "global": true,
       "description": "Send notification of player(s) state"
+    },
+    "speedUp": {
+      "global": true,
+      "description": "Speed up playback by 10%"
+    },
+    "slowDown": {
+      "global": true,
+      "description": "Slow down playback by 10%"
+    },
+    "resetPlaybackSpeed": {
+      "global": true,
+      "description": "Reset playback speed to 100%"
+    },
+    "forward": {
+      "suggested_key": {
+        "default": "MediaNextTrack"
+      },
+      "global": true,
+      "description": "Fast-forward 5 seconds"
+    },
+    "rewind": {
+      "suggested_key": {
+        "default": "MediaPrevTrack"
+      },
+      "global": true,
+      "description": "Rewind 5 seconds"
     }
   }
 }
